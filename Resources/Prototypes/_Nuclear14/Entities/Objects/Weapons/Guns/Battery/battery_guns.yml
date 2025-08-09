@@ -1061,3 +1061,44 @@
     backStrength: 6
   - type: StaticPrice
     price: 400
+
+- type: entity
+  name: scrap laser pistol
+  parent: N14BaseWeaponPowerCellSmall
+  id: ScrapPistol
+  description: A highly advanced plasma pistol with an upgraded rate of fire.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Objects/Weapons/Guns/Battery/plasma_pistol.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Nuclear14/Objects/Weapons/Guns/Battery/plasma_pistol.rsi
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: N14PlasmaCartridge
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        whitelist:
+          tags:
+            - N14PlasmaCartridge
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Gun
+    soundGunshot:
+      collection: N14PlasmaDefenderGunshot
+    fireRate: 2.5
+  - type: FollowDistance
+    backStrength: 6
+  - type: StaticPrice
+    price: 100
+  - type: Cautery
+    speed: 0.2
